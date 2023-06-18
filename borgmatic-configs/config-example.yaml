@@ -1,0 +1,43 @@
+location:
+    # List of source directories to backup.
+    source_directories:
+        - /var/www/site
+        
+    # Paths of local or remote repositories to backup to.
+    repositories:
+        - path: ssh://u123456@u123456.your-storagebox.de:23/./backups/dev
+
+retention:
+    # Retention policy for how many backups to keep.
+    keep_hourly: 0
+    keep_daily: 7
+    keep_weekly: 2
+    keep_monthly: 2
+
+storage:
+    encryption_passphrase: "encryption_passphrase"
+
+    # Command to use instead of just "ssh". This can be used to specify ssh options.
+    ssh_command: ssh -i /home/root/.ssh/private-key -p 23
+
+consistency:
+    # List of checks to run to validate your backups.
+    checks:
+        - repository
+        - archives
+
+hooks:
+    # Custom preparation scripts to run.
+#    before_backup:
+#        - prepare-for-backup.sh
+
+    # Databases to dump and include in backups.
+    mysql_databases:
+        - name: all
+          username: "root"
+          password: "password"
+          options: "--single-transaction --quick"
+
+    # Third-party services to notify you if backups aren't happening.
+    # healthchecks:
+        #ping_url:  https://hc-ping.com/

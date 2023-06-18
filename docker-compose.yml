@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  borgmatic-client:
+    container_name: borgmatic-client
+    image: borgmatic-client-image
+    build: .
+    volumes:
+      - "./.ssh:/home/root/.ssh"
+      - "./borgmatic-configs:/etc/borgmatic.d"
+      - "./borgmatic-backups:/home/root/borgmatic-backups"
+    tty: true

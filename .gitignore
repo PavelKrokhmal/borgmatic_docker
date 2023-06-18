@@ -1,0 +1,6 @@
+.ssh/
+borgmatic-backups/
+borgmatic-configs/*
+!borgmatic-configs/config-example.yaml
+
+
