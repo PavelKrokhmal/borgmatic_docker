@@ -2,8 +2,9 @@
 
 The Borgmatic is simple, configuration-driven backup software for servers and workstations based on Borgbackup (a deduplicating backup program, supports compression and authenticated encryption).
 
-Borgbackup: https://borgbackup.readthedocs.io/en/stable/index.html
-Borgmatic: https://torsion.org/borgmatic/
+Borgbackup documentation is [here.](https://borgbackup.readthedocs.io/en/stable/index.html)
+
+Borgmatic documentation is [here.](https://torsion.org/borgmatic/)
 
 This docker image is dedicated to extracting backups from remote server without dependency pollution of local machine.
 
